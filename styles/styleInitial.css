@@ -143,3 +143,8 @@ nav,
     color: rgb(119, 145, 155) !important;
     text-align: center;
 }
+
+.nav-link.active{
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+  }
