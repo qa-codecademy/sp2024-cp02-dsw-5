@@ -1,267 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!--CSS LINK-->
+    <link rel="stylesheet" href="./styles/styleInitial.css" />
 
-    <link rel="stylesheet" href="./styles/style.css" />
+
+
+    <!--SEARCH ICON-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!--FONT FOR TITLE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
     <title>Signature</title>
-  </head>
+</head>
 
-  <body>
-    <!-- Logo and brand name -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-        <img
-          src="https://eworks-eg.com/wp-content/uploads/2023/02/e-mart-1.png"
-          width="30"
-          height="30"
-          class="d-inline-block align-top"
-          alt="logo-image"
-        />
-        Signature
-      </a>
-      <!-- Home button -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link active" data-target="homePage" href="#"
-              >Home</a
-            >
-          </li>
-          <!-- Category btn -->
-          <li class="nav-item">
-            <a class="nav-link" data-target="categoryPage" href="#"
-              >Category Page</a
-            >
-          </li>
-          <!-- Sales btn -->
-          <li class="nav-item">
-            <a class="nav-link" data-target="salesPage" href="#">Sales Page</a>
-            <!-- Comes with bootstrap can be deleted if needed -->
-          <!-- </li>
-
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li> -->
-        </ul>
-        <!-- Search Bar form-->
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <!--logo-->
+            <img id="navLogo" class="navbar-brand me-auto" width="200px" src="./assets/signatureLogo.png" />
+            <!--offcanvas-->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img width="180px"
+                            src="./assets/signatureLogo.png" /></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!--offcanvas body-->
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="navlink nav-link active" data-target="homePage" aria-current="page"
+                                href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navlink nav-link" data-target="categoryPage" aria-current="page"
+                                href="#">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navlink nav-link" data-target="salesPage" href="#">Sale</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navlink nav-link mx-lg-2" data-target="contactPage" href="#">Contact</a>
+                        </li>
+                        <!--SIGN IN
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" data-target="" href="#">Sign In</a>
+                        </li>-->
+                    </ul>
+                    <hr />
+                    <!--SEARCH-->
+                    <form id="searchForm" class="d-flex" role="search">
+                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search"
+                            aria-label="Search">
+                    </form>
+                </div>
+            </div>
+            <a href="#" data-target="cartPage" class="navlink nav-link cart-button"><i class="fas fa-shopping-cart"></i>
+                To Cart</a>
+            <!--toggler-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
     </nav>
 
-    <div class="container">
-      <div id="homePage" class="page-section active">
-        <!-- Code about the home page here -->
-        <h1>This is our home page</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit commodi
-          quisquam praesentium aperiam rerum dolor soluta voluptates temporibus
-          obcaecati numquam quibusdam, vero, impedit nulla nisi ratione
-          cupiditate molestiae ipsa deserunt. Lorem, ipsum dolor sit amet
-          consectetur adipisicing elit. Tempora quas commodi impedit beatae
-          asperiores cum reiciendis eligendi! Debitis sit laudantium eius sed
-          quis voluptas, iusto porro nesciunt vero fugit dolorem? Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Totam sint vitae laborum,
-          magni esse veritatis placeat doloremque? Laudantium voluptatibus
-          mollitia saepe? Odio quasi molestiae perspiciatis deserunt provident
-          voluptates vero est?
-        </p>
-      </div>
+    <main class="container-fluid">
+        
+        <section id="homePage" class="page-section active">
+            <!--home page content-->
+            <div class="row">
+                <!--top image background-->                  
+                <div class="col-md-12 col-lg-12 mb-5 px-0">
+                  <a class="navlink nav-link" data-target="categoryPage" href="#"><img src="./assets/home_page_top_background.jpg" class="img-fluid" alt="Signature image"></a>
+                </div>
+                <!--categories cards-->  
+                <div class="col-md-3 col-lg-3 mb-4"></div>
+                <div class="col-md-6 col-lg-6 mb-4">
+                  <div class="row text-center justify-content-center">
+                      <div class="col-md-3 col-lg-3">
+                          <div class="image-container">
+                              <a class="navlink nav-link" data-target="categoryPage" href="#"><img src="./assets/home_page_card_necklaces.png" class="img-fluid mb-3 zoom-image" alt="Necklaces image"></a>
+                          </div>
+                          <p><a class="navlink nav-link text-style d-inline" data-target="categoryPage" href="#">Necklaces</a></p>
+                      </div>
+                      <div class="col-md-3 col-lg-3">
+                          <div class="image-container">
+                              <a class="navlink nav-link" data-target="categoryPage" href="#"><img src="./assets/home_page_card_rings.png" class="img-fluid mb-3 zoom-image" alt="Rings image"></a>
+                          </div>
+                          <p><a class="navlink nav-link text-style d-inline" data-target="categoryPage" href="#">Rings</a></p>
+                      </div>
+                      <div class="col-md-3 col-lg-3">
+                          <div class="image-container">
+                              <a class="navlink nav-link" data-target="categoryPage" href="#"><img src="./assets/home_page_card_earrings.png" class="img-fluid mb-3 zoom-image" alt="Earrings image"></a>
+                          </div>
+                          <p><a class="navlink nav-link text-style d-inline" data-target="categoryPage" href="#">Earrings</a></p>
+                      </div>
+                      <div class="col-md-3 col-lg-3">
+                          <div class="image-container">
+                              <a class="navlink nav-link" data-target="categoryPage" href="#"><img src="./assets/home_page_card_braclets.png" class="img-fluid mb-3 zoom-image" alt="Braclets image"></a>
+                          </div>
+                          <p><a class="navlink nav-link text-style d-inline" data-target="categoryPage" href="#">Braclets</a></p>
+                      </div>
+                  </div>
+                </div>      
+                <div class="col-md-3 col-lg-3 mb-4"></div>
+            </div>
+            <!--sales page div-->
+            <div class="row saleLinkPage align-items-center">
+                <div class="col-md-2 col-lg-2"></div>
+                <div class="col-md-5 col-lg-5 text-center">
+                    <h2 class="title-style">Our Aim Is Your Satisfaction</h2>
+                    <a class="navlink nav-link text-style d-inline" data-target="salesPage" href="#">Sales Page</a>
+                </div>
+                <div class="col-md-4 col-lg-4 text-center">
+                    <a class="navlink nav-link" data-target="salesPage" href="#"><img src="./assets/home_page_sale.jpg"
+                            class="img-fluid mb-4 mt-4" alt="Responsive image"></a>
+                </div>
+                <div class="col-md-1 col-lg-1"></div>
+            </div>            
+            <!--categories carousel-->
+            <div class="row">
+                <div id="carouselExampleCaptions" class="carousel slide col-12 mt-5 mb-5 px-0 mx-0">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./assets/carousel_bracelet.png" class="d-block w-100" alt="Bracelets">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2><a class="navlink nav-link title-style" data-target="categoryPage" href="#">Summer Bracelets</a>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/carousel_earrings.png" class="d-block w-100" alt="Earrings">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2><a class="navlink nav-link title-style" data-target="categoryPage" href="#">Summer Earrings</a>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/carousel_rings.png" class="d-block w-100" alt="Rings">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2><a class="navlink nav-link title-style" data-target="categoryPage" href="#">Summer Rings</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="row saleLinkPage text-center mb-5 pb-4">
+                <h2 class="title-style mt-4 mb-5">HIGHEST QUALITY MATERIALS GUARANTEED!</h2>
+                <div class="col-md-1 col-lg-1"></div>            
+                <div class="col-md-3 col-lg-3 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height:2.4rem;" class="mb-4" aria-hidden="true" focusable="false"
+                        fill="none" viewBox="0 0 448 512">
+                        <path
+                            d="M384 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h320c35.35 0 64-28.65 64-64V96C448 60.65 419.3 32 384 32zM416 416c0 17.64-14.36 32-32 32H64c-17.64 0-32-14.36-32-32V96c0-17.64 14.36-32 32-32h320c17.64 0 32 14.36 32 32V416zM308.7 180.7L192 297.4L139.3 244.7c-6.25-6.25-16.38-6.25-22.62 0s-6.25 16.38 0 22.62l64 64C183.8 334.4 187.9 336 192 336s8.188-1.562 11.31-4.688l128-128c6.25-6.25 6.25-16.38 0-22.62S314.9 174.4 308.7 180.7z"
+                            fill="currentColor"></path>
+                    </svg>
+                    <p>All of our pieces are designed with the highest quality materials and extensively tested to make sure they
+                        won't tarnish!</p>
+                </div>
+                <div class="col-md-4 col-lg-4 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height:2.4rem;" class="mb-4" aria-hidden="true" focusable="false"
+                        fill="none" viewBox="0 0 512 512">
+                        <path
+                            d="M462.3 62.71c-54.5-46.5-136.1-38.99-186.6 13.27l-19.69 20.61l-19.71-20.61C195.6 33.85 113.3 8.71 49.76 62.71C-13.11 116.2-16.31 212.5 39.81 270.5l193.2 199.7C239.3 476.7 247.8 480 255.9 480c8.25 0 16.33-3.25 22.58-9.751l193.6-199.8C528.5 212.5 525.1 116.2 462.3 62.71zM449.3 248.2l-192.9 199.9L62.76 248.2C24.39 208.7 16.39 133.2 70.51 87.09C125.3 40.21 189.8 74.22 213.3 98.59l42.75 44.13l42.75-44.13c23.13-24 88.13-58 142.8-11.5C495.5 133.1 487.6 208.6 449.3 248.2z"
+                            fill="currentColor"></path>
+                    </svg>
+                    <p>All crystals are the highest quality cubic zirconia on the market. Our Fine Jewelry collection is made with
+                        ethically sourced and conflict free diamonds.</p>
+                </div>
+                <div class="col-md-3 col-lg-3 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height:2.4rem;" class="mb-4" aria-hidden="true" focusable="false"
+                        fill="none" viewBox="0 0 576 512">
+                        <path
+                            d="M528.5 171.5l-146.4-21.29l-65.43-132.4C310.9 5.971 299.4-.002 287.1 0C276.6 0 265.1 5.899 259.3 17.8L193.8 150.2L47.47 171.5C21.2 175.3 10.68 207.6 29.72 226.1l105.9 102.1L110.6 474.6C107 495.3 123.6 512 142.2 512c4.932 0 10.01-1.172 14.88-3.75L288 439.6l130.9 68.7c4.865 2.553 9.926 3.713 14.85 3.713c18.61 0 35.21-16.61 31.65-37.41l-25.05-145.5l105.9-102.1C565.3 207.6 554.8 175.3 528.5 171.5zM407.4 326.2l26.39 153.7l-138.4-72.6c-4.656-2.443-10.21-2.442-14.87 .0008l-138.4 72.66l27.91-162.1l-117.9-114.7l154.7-22.51C211.1 179.9 216.5 176.6 218.8 171.9L288 32l69.21 139.9c2.333 4.716 6.834 7.983 12.04 8.74l154.7 22.49l-111.1 108.9C408.2 315.7 406.5 320.1 407.4 326.2z"
+                            fill="currentColor"></path>
+                    </svg>
+                    <p>Our pieces are sterling silver and either gold filled or gold vermeil! The Fine Jewelry collection is 14K
+                        Solid Gold.</p>
+                </div>            
+                <div class="col-md-1 col-lg-1"></div>
+            </div>            
+        </section>
 
-      <div id="categoryPage" class="page-section">
-        <!-- Code about the category page here -->
-        <h1>This is out Category page!</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam sunt,
-          eveniet optio amet, molestiae molestias corrupti repellendus iste
-          officiis dignissimos, similique rerum voluptatem saepe recusandae?
-          Repellendus sed recusandae fuga aliquam? Neque eius eveniet illo
-          libero vero rem, provident perferendis molestias pariatur quis quia
-          numquam nihil tempore officiis nam doloribus voluptatibus impedit
-          expedita distinctio culpa totam, autem sed quo. Deleniti, sunt. Maxime
-          unde enim eaque culpa adipisci hic sapiente, autem quod porro. Autem
-          officia eos harum maxime accusamus ipsam? Fuga eum architecto modi
-          beatae consequuntur, rerum magnam officiis ullam voluptate ducimus!
-          Quis quaerat fuga in eaque. Provident esse sit, nobis incidunt tempore
-          atque in, magnam quibusdam facere voluptas vitae suscipit. Voluptatum,
-          recusandae! Rem quas cum minima vero ad? Est, modi vero? Provident
-          natus, iste enim adipisci cumque, sunt soluta repudiandae asperiores
-          maxime sapiente ut aperiam voluptate voluptates iusto itaque
-          perferendis. Eos nam tempore corrupti ea deserunt eum labore assumenda
-          rerum voluptatum? Excepturi unde delectus commodi, iure eaque
-          reiciendis magnam rem. Similique, id, sunt amet repellat earum iure
-          iste a error voluptas quasi porro ad expedita maxime vel molestias
-          enim modi culpa? Distinctio temporibus omnis aliquam necessitatibus
-          impedit atque itaque facere ratione vero, deserunt provident
-          molestiae, similique ab eligendi voluptatum doloribus cupiditate
-          consequuntur cum quia sit maxime animi expedita iusto assumenda?
-          Veritatis? Animi fugiat rem nemo deleniti. Officiis consequatur
-          possimus, voluptatibus, harum veniam aut velit obcaecati minima ullam
-          deserunt doloribus, laudantium magnam. Magni odit quia aperiam
-          provident saepe commodi tempora est odio. Vitae tempore distinctio
-          maiores alias laboriosam a? Impedit consequuntur sunt quo ratione
-          perspiciatis, voluptatibus nemo neque minus possimus nihil beatae
-          omnis necessitatibus quasi quis quidem aliquam commodi modi nostrum
-          cumque! Nihil cupiditate totam ratione dolores minus officiis unde,
-          architecto ullam ut alias sed consequatur, molestiae quas enim ducimus
-          eaque rerum optio quae maiores. Id ex minus doloribus adipisci
-          corporis deserunt! Aliquid excepturi vero fuga eius? Quo inventore
-          fugit amet sit? Hic iusto placeat sed pariatur aperiam eaque libero
-          voluptatibus ratione fuga culpa quisquam tempore quam adipisci, quod
-          autem velit perferendis? Eveniet, sed itaque obcaecati modi
-          reprehenderit aspernatur saepe. Blanditiis porro, consequuntur
-          reiciendis, vel, quasi veniam aut quo qui nobis soluta voluptates? Ut,
-          cum voluptates voluptatem sint et repellat saepe optio! Voluptatem
-          eligendi nemo distinctio, accusamus molestias quae facilis rerum ipsa
-          cupiditate sunt repellendus harum sit totam velit, saepe, itaque ullam
-          deserunt consequatur quia est quidem! Modi aut nostrum corporis
-          perferendis. Accusantium, quis repellat ducimus numquam aliquam
-          provident quo fugiat voluptatibus alias quae voluptate! Fugit
-          accusantium quis provident tempore dicta distinctio eos? Fugiat
-          architecto iste voluptatibus? Doloribus nobis distinctio repudiandae
-          saepe! Blanditiis necessitatibus corrupti repudiandae exercitationem
-          voluptas dolore dolorem autem deserunt perspiciatis recusandae. Ipsam,
-          molestiae magnam! Aliquam vel ipsa esse quia eos ratione nobis impedit
-          officiis! Iure a aliquam porro officiis. Architecto autem, pariatur
-          quibusdam error vero, recusandae voluptas obcaecati explicabo ut
-          mollitia fugit. Nisi nulla, autem sapiente optio aut error
-          exercitationem. Fugit cum repellat, accusamus recusandae sit debitis
-          quidem blanditiis! Lorem ipsum dolor sit amet consectetur, adipisicing
-          elit. Praesentium eius nisi, accusantium ea similique deleniti numquam
-          quasi? Est perspiciatis consequuntur ipsa assumenda labore nam
-          inventore! A nulla rem magni officiis. Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Consequuntur repudiandae et illum
-          eveniet sequi voluptatem voluptatum adipisci ipsum placeat soluta
-          dicta, tempora odio obcaecati ea consequatur mollitia vero eum in!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, hic
-          incidunt praesentium accusantium aperiam magnam optio consequatur modi
-          excepturi expedita labore deleniti voluptas! Natus error, perferendis
-          ea quasi ex unde. Excepturi consequuntur, facere quidem ut quae
-          voluptates accusamus architecto quasi eveniet eum. Earum unde ad
-          quisquam, placeat aliquam tempora vero voluptatem, iste perferendis
-          dicta cumque error odit quaerat hic tenetur? Doloremque velit deleniti
-          fugiat quis, quod sit iure quos error vero quo ducimus eos? Tenetur
-          rem ipsa illo quo aperiam velit necessitatibus repellendus hic, ut
-          saepe neque pariatur autem magnam. Temporibus cum expedita
-          perspiciatis provident nam. Officiis voluptatem quas consequatur, hic
-          laudantium totam animi perspiciatis. Suscipit officia, molestiae
-          voluptas vitae fugiat, exercitationem eos est possimus dignissimos
-          atque eaque quae. Iure. Molestiae laudantium delectus, qui, quis vero
-          amet libero sed totam blanditiis esse dolore! Quos, alias debitis,
-          porro culpa est error totam, distinctio rem incidunt id consectetur.
-          Ut placeat eligendi illum! Quod rerum perspiciatis saepe at sequi cum
-          modi, perferendis impedit rem ipsam illo, fugit dolor, est natus quo
-          voluptatem odio eius. Ipsam similique esse necessitatibus veritatis
-          eius perspiciatis consequuntur sequi! Temporibus suscipit numquam,
-          accusantium sunt doloremque placeat facilis voluptatibus quae cum
-          dolor eum in aspernatur? Porro, nostrum repudiandae! Officiis, qui.
-          Officiis, praesentium commodi ad molestiae omnis iure illo maiores at.
-          Doloribus, deserunt saepe laudantium similique accusamus deleniti,
-          sapiente voluptas quam voluptates voluptatum corporis ratione
-          blanditiis dolorem placeat nulla eius. Iste odit ad iusto porro esse
-          minus accusantium provident quas eligendi. Vero, cumque aliquam,
-          veritatis labore unde in repellat distinctio vel a magni nihil
-          perspiciatis! Libero in, voluptas culpa qui rem pariatur est itaque,
-          quisquam dolore dolorum molestiae. Repellat, repudiandae laudantium!
-          Itaque repellendus alias, vel rem quia, illum tempore deserunt eveniet
-          suscipit molestias sunt! Nisi aliquid iste nostrum dicta soluta
-          veniam, distinctio laborum consectetur nemo molestiae sequi asperiores
-          pariatur tenetur enim? Laudantium dolorum alias quibusdam, non ipsa
-          recusandae! Rem reiciendis vero aut similique voluptatum illum
-          aspernatur quibusdam deserunt nobis laboriosam fugit recusandae quae
-          suscipit quasi sed itaque aperiam, in sunt? Perferendis! Accusamus
-          ipsam minus tenetur aspernatur laudantium et nisi consequatur, maxime
-          provident harum optio quas nihil vitae tempore quos pariatur
-          doloribus, placeat recusandae voluptas. Architecto perferendis
-          blanditiis molestias commodi fuga magnam. Aliquam, placeat nam,
-          repellat esse hic, cumque modi ad assumenda ullam possimus illo odio
-          voluptate consectetur? Quam aperiam cumque, facilis voluptate
-          inventore sed architecto numquam non quae, soluta veritatis! At! Ipsum
-          beatae cum ex quasi hic dolores neque enim earum recusandae vitae
-          reprehenderit magnam numquam eligendi sit, non sequi reiciendis
-          exercitationem. Dicta possimus assumenda nostrum beatae nulla dolorem!
-          Hic, neque? Cum quos pariatur, eaque corporis sed, voluptatum vel
-          inventore totam explicabo esse earum itaque deleniti nostrum fuga et
-          sint doloremque porro quod. Obcaecati consequuntur laborum quos, ex
-          eos ducimus optio! Laudantium consequuntur nesciunt deserunt alias,
-          exercitationem dolorem est unde, impedit veniam explicabo molestiae
-          nisi quibusdam reprehenderit expedita sunt et perferendis sapiente a
-          suscipit iusto hic sit? Iusto nostrum ad reprehenderit! Quibusdam
-          itaque ipsa libero praesentium? Quidem quod dolorem quibusdam quis?
-          Magni modi accusantium atque tempora neque voluptatum rem recusandae
-          delectus tenetur odit, consequuntur maiores facilis, ea possimus quos
-          necessitatibus molestias. Nobis esse ea dolorem amet quo possimus
-          impedit tempore corporis laborum eius at assumenda, libero culpa ut,
-          quia aperiam atque nulla doloribus est consequuntur error dolor
-          nostrum perspiciatis ab. Eligendi. Nihil reiciendis dolorum ducimus
-          voluptas amet molestiae dicta blanditiis dolor, error sed delectus
-          atque tempora! Aliquam officiis aspernatur, doloribus voluptatibus
-          illum nulla quibusdam reprehenderit quam vero laudantium, consequatur
-          tenetur consectetur? Labore possimus necessitatibus obcaecati
-          mollitia, officia asperiores earum veniam, repudiandae soluta sed
-          itaque laborum voluptatum tenetur nostrum atque quibusdam ut eligendi
-          vitae, perspiciatis molestias pariatur voluptates. Quod est nam illo!
-          Repellendus odit omnis deleniti voluptatum maiores. Cum debitis, modi
-          magnam, corporis quos accusantium accusamus incidunt illum aliquid,
-          facere enim? Voluptates sequi enim tempore ipsa pariatur voluptatum
-          quae error alias rerum? Fuga praesentium aut repellat? Illo alias
-          dolorum maiores aspernatur sint temporibus enim neque nemo sit,
-          asperiores blanditiis omnis magni at, vel exercitationem quas, vero
-          sequi incidunt a recusandae atque optio! Dicta totam odit enim dolorum
-          ipsam vitae sapiente! Cumque neque possimus beatae voluptate, minus
-          hic modi sed officia dolor sit culpa nemo, eius cum, nostrum
-          exercitationem reprehenderit adipisci commodi voluptatum. Vero
-          laboriosam amet autem reprehenderit neque voluptatum aut odio sed unde
-          dolorem nam consequuntur, fuga sequi cupiditate quaerat doloribus,
-          esse in repellat, iste dolor? Consequatur quidem laborum earum
-          possimus sunt! Quasi earum consequatur id deleniti voluptas
-          voluptatibus facilis nulla ab, numquam quaerat, vero tempora excepturi
-          fugit accusantium vitae laboriosam aliquid et blanditiis enim cum quis
-          debitis sunt pariatur modi. Enim. Corrupti officiis, quo minus fugit
-          adipisci accusantium provident nostrum blanditiis nesciunt earum
-          natus, distinctio veritatis hic recusandae, esse ullam. Iure, quod.
-          Enim tempore vero eos obcaecati modi ut iure placeat! Deleniti eius
-          debitis quidem quos consequatur iusto cum nisi incidunt facilis.
-          Repudiandae maxime minima amet quos hic dolorem itaque tenetur quas,
-          suscipit dolore qui deleniti, sunt voluptas nesciunt magni laboriosam.
-          Maxime minus, molestias porro ratione pariatur provident neque,
-          obcaecati minima veritatis accusamus nam voluptates rerum accusantium
-          repellat eveniet quaerat ab officiis quae iure delectus. Molestias
-          necessitatibus labore nisi. Architecto, veniam? Nesciunt accusamus
-          rerum accusantium id amet cumque quam quo at praesentium distinctio
-          modi aspernatur hic, ullam nihil sed. Esse enim natus vero quisquam
-          reiciendis est quo repudiandae velit nihil consequatur! Quam et iste,
-          quisquam commodi hic rerum provident sint dignissimos itaque magni,
-          repudiandae ipsum consectetur beatae qui perspiciatis nam accusantium
-          explicabo necessitatibus earum blanditiis aut? Suscipit vel assumenda
-          quis nam.
-        </p>
-      </div>
+        <section id="salesPage" class="page-section">
+            <!--sale page content-->
+        </section>
+        <section id="categoryPage" class="page-section">
+            <!--category page content-->
+        </section>
+        <section id="cartPage" class="page-section">
+            <!-- cart page content-->
+        </section>
+        <section id="contactPage" class="page-section">
+            <div id="contactForm">
+            <!--contact page content-->
+            </div>
+        </section>
+        <section id="searchPage" class="page-section">
+            <!--search page content-->
+        </section>
+        <!--<section id="signinPage" class="page-section">
+            singInPage content NOT IMPLEMENTED YET
+        </section>-->
+    </main>
 
-      <div id="salesPage" class="page-section">
-        <!-- Sales page here -->
-        <h1>Sales Page</h1>
-      </div>
-    </div>
-
-    <footer class="fixed-bottom">
-      <p>© sp2024-co02-dsw-5</p>
+    <!-- Footer -->
+    <footer class="footer text-lg-start text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-3 border-bottom">
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </section>
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container-fluid">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-7 col-lg-5 col-xl-4 mx-auto mb-2">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-2"></i>Signature
+                        </h6>
+                        <p>
+                            Offering you a seamless experience in delivering exquisite jewelry pieces directly to your
+                            doorstep.
+                        </p>
+                    </div>
+                    <hr class="d-block d-lg-none" />
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2 border-bottom">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i>Skopje, Macedonia</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            customers@signature.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 389 78 123 456</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Copyright -->
+        <div class="text-center p-2">
+            © 2024 Copyright: <b>Signature</b>
+        </div>
+        <!-- Copyright -->
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./scripts/script.js"></script>
-  </body>
+    <!--Bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!--link js files-->
+    <script src="./scripts/scriptInitial.js"></script>
+<!--links here-->
+
+
+</body>
+
 </html>

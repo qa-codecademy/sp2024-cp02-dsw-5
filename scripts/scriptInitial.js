@@ -1,9 +1,8 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   function handleNavClick(event) {
     event.preventDefault();
 
-    let navLinks = document.querySelectorAll('.nav-link');
+    let navLinks = document.querySelectorAll('.navlink');
     
     navLinks.forEach(link => {
       link.classList.remove('active');
@@ -21,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById(target).classList.add('active');
   }
 
-  let navLinks = document.querySelectorAll('.nav-link');
+  let navLinks = document.querySelectorAll('.navlink');
 
   navLinks.forEach(link => {
     link.addEventListener('click', handleNavClick);
   });
 
   // Set the home page as active by default
-  document.querySelector('.nav-link[data-target="homePage"]').classList.add('active');
+  document.querySelector('.navlink[data-target="homePage"]').classList.add('active');
   document.getElementById('homePage').classList.add('active');
 });
