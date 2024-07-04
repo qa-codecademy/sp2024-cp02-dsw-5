@@ -1,0 +1,25 @@
+#productList .card {
+    width: 17rem;
+  }
+  .card {
+    position: relative;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .card-description {
+    overflow: hidden;
+    display: block;
+    white-space: pre-wrap;
+  }
+
+  .addToCartBtn{
+    /* background-color: #142A35; */
+    background-color: white;
+    color: #142A35;
+    border: 6px solid #142A35;
+  }
