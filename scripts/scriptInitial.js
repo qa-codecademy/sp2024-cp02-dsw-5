@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', function() {
 
   let currentPage = 1;
@@ -10,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
 
     let navLinks = document.querySelectorAll('.nav-link');
+
 
     navLinks.forEach(link => {
       link.classList.remove('active');
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById(target).classList.add('active');
 
-
     if (target === 'categoryPage') {
       loadCategoryData();
     }
@@ -39,5 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 });
 
+  // Set the home page as active by default
 document.querySelector('.nav-link[data-target="homePage"]').classList.add('active');
 document.getElementById('homePage').classList.add('active');
+
+
