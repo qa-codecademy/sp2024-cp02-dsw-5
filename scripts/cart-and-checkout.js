@@ -1,55 +1,19 @@
-const products = [
-    {
-        id: 1,
-        name: "14k Gold Classic Huggies",
-        category: "Earrings",
-        material: "Gold",
-        price: 196,
-        onSale: false,
-        discount: null,
-        img: "https://www.gorjana.com/cdn/shop/files/219-002-G-v2-1_1caf9a3b-1a84-43b3-8df2-fa6380675b22.jpg?v=1695252610&%3Bwidth=1080&em-format=avif&em-width=1080",
-        description: "These 14k solid gold huggie earrings are timeless - show them off by wearing them with your favorite solid gold studs, huggies and hoops."
-    },
-    {
-        id: 2,
-        name: "Diamond Double Down Huggies",
-        category: "Earrings",
-        material: "Gold",
-        price: 560,
-        onSale: true,
-        discount: 20,
-        img: "https://www.gorjana.com/cdn/shop/files/FEB24_PRO_242-008-185-G_01_c4e0f116-c3b2-4b03-9dee-6f2cb354c636.jpg?v=1706021548&%3Bwidth=1080&em-format=avif&em-width=1080",
-        description: "Featuring a double row of thirty-six diamonds set in solid gold, these huggie earrings are sure to make a statement in your ear stack."
-    },
-    {
-        id: 3,
-        name: "Diamond Jolie Studs",
-        category: "Earrings",
-        material: "Gold",
-        price: 260,
-        onSale: false,
-        discount: null,
-        img: "https://www.gorjana.com/cdn/shop/files/2110-002-185-G_1_1.jpg?v=1698101354&%3Bwidth=1080&em-format=avif&em-width=1080",
-        description: "The beauty of earring stacking lies in the opportunity to mix and match different styles, shapes, and sizes. Style this pair of diamond studs in first, second or third piercings."
-    },
-    {
-        id: 4,
-        name: "Pearl Newport Chain Huggies",
-        category: "Earrings",
-        material: "Gold",
-        price: 196,
-        onSale: true,
-        discount: 15,
-        img: "https://www.gorjana.com/cdn/shop/files/224-002-186-G_1_5ecb4268-71ef-46c3-9ca4-6bfa9ff65f8c.jpg?v=1698163725&%3Bwidth=1080&em-format=avif&em-width=1080",
-        description: "Crafted with a genuine freshwater pearl set on a 14k solid gold chain, this pair of modern huggie earrings are perfect for everyday wear or special occasions."
-    }
-];
+let products = localStorage.getItem("cartItems");
 
-document.addEventListener('DOMContentLoaded', function () {
+if (products) {
+    products = JSON.parse(products);
+  } else {
+    products = [];
+  }
+
+document.addEventListener('DOMContentLoaded', LoadCartProducts(products));
+function LoadCartProducts(products) {
     const cartContainer = document.getElementById('cart-container');
 
+    
     // Function to render products in the cart
-    const renderCartItems = (products) => {
+    const renderCartItems = () => {
+        cartContainer.innerHTML = "";
         products.forEach(product => {
             const cartItem = document.createElement('div');
             cartItem.className = 'row cart-item';
@@ -71,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p class="productDiscount">${product.onSale ? `Discount: ${product.discount}%` : ''}</p>
                     <p class="data-price">Price: $${product.price}</p>
 
-                    <button type="button" class="btn btn-primary btn-sm me-1 mb-2 remove-item" data-mdb-tooltip-init title="Remove item">
+                    <button type="button" class="btn btn-primary btn-sm me-1 mb-2 remove-item" data-product-id="${product.id}" data-mdb-tooltip-init title="Remove item">
                         <i class="fas fa-trash"></i>Remove item
                     </button>
                 </div>
@@ -98,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         addEventListeners();
         updateTotalPrice();
+
     };
 
     const discountRate = 0.1; // 10% discount
@@ -140,10 +105,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.querySelectorAll('.remove-item').forEach(btn => {
             btn.addEventListener('click', function () {
-                this.closest('.cart-item').remove();
+                const productId = this.getAttribute("data-product-id");
+                //this.closest('.cart-item').remove();
+                removeProductFromCart(productId);
                 updateTotalPrice();
             });
         });
+
+        
     };
 
     renderCartItems(products);
@@ -160,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     btnCheckout.addEventListener("click", checkout);
-});
+};
 
 document.addEventListener('DOMContentLoaded', function () {
     const orderForm = document.getElementById('orderForm');
@@ -170,6 +139,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (orderForm.checkValidity() ) {
             alert('The order is successfully submitted.');
+            localStorage.setItem("cartItems","");
+            products = JSON.parse(localStorage.getItem("cartItems"));
+            LoadCartProducts(products);
             
         } else {
             // Highlight the fields with errors
@@ -178,6 +150,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
 
 
