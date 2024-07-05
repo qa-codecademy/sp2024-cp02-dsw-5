@@ -153,7 +153,8 @@ function attachAddToCartListeners() {
   addToCartButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const productId = this.getAttribute("data-product-id");
-      console.log("Product added to cart:", productId);
+      addProductToCart(productId);
+      //console.log("Product added to cart:", productId);
     });
   });
 }
