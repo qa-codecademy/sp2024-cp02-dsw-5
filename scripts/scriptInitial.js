@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
 
     let navLinks = document.querySelectorAll('.nav-link');
-
-
     navLinks.forEach(link => {
       link.classList.remove('active');
     });
@@ -28,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (target === 'categoryPage') {
       loadCategoryData();
+    }
+    if(target === "salesPage"){
+      loadSalesData();
     }
   }
 

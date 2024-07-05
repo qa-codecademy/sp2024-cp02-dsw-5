@@ -9,7 +9,6 @@ if (products) {
 document.addEventListener('DOMContentLoaded', LoadCartProducts(products));
 function LoadCartProducts(products) {
     const cartContainer = document.getElementById('cart-container');
-
     
     // Function to render products in the cart
     const renderCartItems = () => {
@@ -139,8 +138,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (orderForm.checkValidity() ) {
             alert('The order is successfully submitted.');
-            localStorage.setItem("cartItems","");
-            products = JSON.parse(localStorage.getItem("cartItems"));
+            localStorage.setItem("cartItems",JSON.stringify([]));
+            let jsondata = localStorage.getItem("cartItems");
+            products = JSON.parse(jsondata);
             LoadCartProducts(products);
             
         } else {
