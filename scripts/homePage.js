@@ -64,6 +64,35 @@ function navigateToCategoryPage(category) {
 
 }
 
+//sales page btn in the homepage acts as a navbar homepage btn
+let salesPageBtnFromHomePage = document.getElementById("salesPageBtn");
+salesPageBtnFromHomePage.addEventListener("click", (e) => {
+  e.preventDefault();
+  let salesPageBtnFromNavBar = document.getElementById("salesPageBtnNav");
+  
+  let clickEvent = new MouseEvent("click", {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  });
+  salesPageBtnFromNavBar.dispatchEvent(clickEvent);
+});
+
+//logo in the navbar acts same as homePage btn in navbar
+let navLogo = document.getElementById("navLogoAncor");
+navLogo.addEventListener("click", (e) => {
+  e.preventDefault();
+  let homeBtnFromNavBar = document.querySelector(".getHomeBtnNav");
+  
+  let clickEvent = new MouseEvent("click", {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  });
+  homeBtnFromNavBar.dispatchEvent(clickEvent);
+});
+
+
 // function filterProducts() {
 //   const selectedCategory = document.getElementById("categories").value;
 //   const selectedMaterial = document.getElementById("materials").value;
