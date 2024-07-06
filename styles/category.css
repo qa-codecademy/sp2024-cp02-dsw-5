@@ -1,6 +1,11 @@
 #productList .card {
     width: 17rem;
   }
+
+  #salesProductList .card {
+    width: 17rem;
+  }
+
   .card {
     position: relative;
   }
@@ -115,7 +120,8 @@
 
   #filterOptions > div {
       width: auto; /* Revert to original width for larger screens */
-      margin-bottom: 0; /* Remove bottom margin */
+      margin-bottom: 5; /* Remove bottom margin */
+
   }
 
   #filterOptions input[type="range"] {
@@ -190,11 +196,10 @@
 }
 
 .card-img-top {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  max-height: 200px;
-  object-fit: cover;
-}
+  border-radius: 15px;
+  height: 270px;
+} 
+
 
 .card-body {
   padding: 10px;
@@ -240,3 +245,16 @@
   margin-top: auto;
   padding-top: 5px;
 }
+
+
+/* SALE IMG */
+#signatureSale {
+  width:100%;
+}
+
+@media (max-width: 768px) { 
+  .hide-on-small-screen {
+    display: none;
+  }
+}
+

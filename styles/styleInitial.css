@@ -78,7 +78,7 @@ nav,
 }
 
 .container {
-    padding-top: 150px;
+    padding-top: 120px;
 }
 
 /*SEARCH   searchForm, searchButton, searchInput*/
@@ -186,5 +186,3 @@ nav,
   .notification.show {
     opacity: 1; 
   }
-
-
