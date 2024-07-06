@@ -1,0 +1,10 @@
+.btn-plus, .btn-minus {
+    background-color: #142a35;
+    height: 100%;
+}
+
+.btn-plus:hover, .btn-minus:hover {
+    background-color: burlywood !important;
+    border: none;
+}
+

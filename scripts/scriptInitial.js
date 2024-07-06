@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById(target).classList.add('active');
 
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
+
     if (target === 'categoryPage') {
       loadCategoryData();
     }
