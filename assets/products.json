@@ -156,7 +156,7 @@
   {
     "id": 15,
     "name": "Zoey Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 58,
     "onSale": false,
@@ -167,7 +167,7 @@
   {
     "id": 16,
     "name": "Go To Bracelet Set",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 125,
     "onSale": true,
@@ -178,7 +178,7 @@
   {
     "id": 17,
     "name": "Amour Bracelet Red",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 58,
     "onSale": true,
@@ -189,7 +189,7 @@
   {
     "id": 18,
     "name": "Brooklyn Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 95,
     "onSale": false,
@@ -200,7 +200,7 @@
   {
     "id": 19,
     "name": "Venice Mini Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 58,
     "onSale": true,
@@ -211,7 +211,7 @@
   {
     "id": 20,
     "name": "Parker Pearl Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Pearl",
     "price": 68,
     "onSale": false,
@@ -222,7 +222,7 @@
   {
     "id": 21,
     "name": "Carter Gemstone Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 45,
     "onSale": false,
@@ -233,7 +233,7 @@
   {
     "id": 22,
     "name": "Venice Watch Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 78,
     "onSale": true,
@@ -244,7 +244,7 @@
   {
     "id": 23,
     "name": "Bespoke Plate Adjustable Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Silver",
     "price": 78,
     "onSale": false,
@@ -255,7 +255,7 @@
   {
     "id": 24,
     "name": "Jagger Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 88,
     "onSale": true,
@@ -497,7 +497,7 @@
   {
     "id": 46,
     "name": "Zoey Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 58,
     "onSale": false,
@@ -508,7 +508,7 @@
   {
     "id": 47,
     "name": "Go To Bracelet Set",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 125,
     "onSale": true,
@@ -519,7 +519,7 @@
   {
     "id": 48,
     "name": "Amour Bracelet Red",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 58,
     "onSale": true,
@@ -530,7 +530,7 @@
   {
     "id": 49,
     "name": "Brooklyn Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 95,
     "onSale": false,
@@ -541,7 +541,7 @@
   {
     "id": 50,
     "name": "Venice Mini Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 58,
     "onSale": true,
@@ -552,7 +552,7 @@
   {
     "id": 51,
     "name": "Parker Pearl Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Pearl",
     "price": 68,
     "onSale": false,
@@ -563,7 +563,7 @@
   {
     "id": 52,
     "name": "Carter Gemstone Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 45,
     "onSale": false,
@@ -574,7 +574,7 @@
   {
     "id": 53,
     "name": "Venice Watch Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 78,
     "onSale": true,
@@ -585,7 +585,7 @@
   {
     "id": 54,
     "name": "Bespoke Plate Adjustable Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Silver",
     "price": 78,
     "onSale": false,
@@ -596,7 +596,7 @@
   {
     "id": 55,
     "name": "Jagger Bracelet",
-    "category": "Bracelet",
+    "category": "Bracelets",
     "material": "Gold",
     "price": 88,
     "onSale": true,
