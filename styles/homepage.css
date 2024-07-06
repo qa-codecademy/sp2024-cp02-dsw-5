@@ -92,3 +92,9 @@
 
 /* ----------------------------- */
 /* END HOME PAGE */
+
+.noHoverChange:hover {
+  color: #141414 !important;
+  text-shadow: 2px 2px 5px gray;
+}
+
