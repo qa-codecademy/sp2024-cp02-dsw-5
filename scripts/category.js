@@ -17,21 +17,28 @@ async function loadCategoryData() {
 
     setupPagination(productsData);
 
-    document
-      .getElementById("categories")
-      .addEventListener("change", filterProducts);
-    document
-      .getElementById("materials")
-      .addEventListener("change", filterProducts);
-    document
-      .getElementById("pageSize")
-      .addEventListener("change", updatePageSize);
-    document
-      .getElementById("priceRange")
-      .addEventListener("input", filterProducts);
-  } catch (error) {
-    console.error("Error loading data:", error);
-  }
+    document.getElementById("categories").addEventListener("change", function () {
+      currentPage = 1;
+      filterProducts(); 
+    });
+    
+    document.getElementById("materials").addEventListener("change", function () {
+      currentPage = 1;
+      filterProducts();
+    });
+    
+    document.getElementById("pageSize").addEventListener("change", function () {
+      currentPage = 1;
+      updatePageSize();
+    });
+    
+    document.getElementById("priceRange").addEventListener("input", function () {
+      currentPage = 1; 
+      filterProducts();
+    });
+} catch (error) {
+  console.error("Error loading data:", error);
+}
 }
 
 async function loadSalesData() {
@@ -107,7 +114,7 @@ function populateSalesProducts(products) {
         <p class="card-text">${product.material}</p>
         <p class="card-description flex-grow-1">${product.description}</p>
         <div class="mt-auto">
-          <p class="card-text" style="font-size: 1.5em;">$${product.price}</p>
+          <p class="card-text">${product.price}</p>
           <button class="btn btn-primary add-to-cart-btn mt-3" data-product-id="${product.id}">Add to Cart</button>
         </div>
       </div>
@@ -172,6 +179,11 @@ function setupPagination(products) {
   for (let i = 1; i <= pageCount; i++) {
     const li = document.createElement("li");
     li.classList.add("page-item");
+     //here
+     if (i === currentPage) {
+      li.classList.add("active");
+    }
+    //to here
     const link = document.createElement("a");
     link.classList.add("page-link");
     link.href = "#";
@@ -182,7 +194,8 @@ function setupPagination(products) {
       event.preventDefault();
       currentPage = i;
       filterProducts();
-      window.scrollTo(0, 0); // used to get back to top of page when switching category pages
+      window.scrollTo(0, 0);
+      updateActivePage(); 
     });
 
     paginationElement.appendChild(li);
@@ -201,3 +214,16 @@ function attachAddToCartListeners() {
 }
 
 // });
+
+
+function updateActivePage() {
+  const paginationItems = document.querySelectorAll(".pagination .page-item");
+
+  paginationItems.forEach((item, index) => {
+    if (index + 1 === currentPage) {
+      item.classList.add("active");
+    } else {
+      item.classList.remove("active");
+    }
+  });
+}

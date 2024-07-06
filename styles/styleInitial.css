@@ -117,7 +117,7 @@ nav,
 }
 
 .navlink:active {
-    background-color: #142a35;
+    background-color: none;
 }
 
 /*custom scrollbar */
