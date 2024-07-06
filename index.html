@@ -47,7 +47,7 @@
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <!--logo-->
-            <a id="navLogoAncor" href="#"><img id="navLogo" class="navbar-brand me-auto" width="200px" src="./assets/signatureLogo.png" /></a>
+            <img id="navLogo" class="navbar-brand me-auto" width="200px" src="./assets/signatureLogo.png" />
             <!--offcanvas-->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
@@ -60,7 +60,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="getHomeBtnNav navlink nav-link active" data-target="homePage" aria-current="page"
+                            <a class="navlink nav-link active" data-target="homePage" aria-current="page"
                                 href="#">Home</a>
                         </li>
                         <li class="nav-item">
@@ -68,8 +68,7 @@
                                 href="#">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a id="salesPageBtnNav" class="navlink nav-link" data-target="salesPage" href="#">Sale</a>
-
+                            <a id ="salePageNavButton" class="navlink nav-link" data-target="salesPage" href="#">Sale</a>
                         </li>
                         <li class="nav-item">
                             <a class="navlink nav-link mx-lg-2" data-target="contactPage" href="#">Contact</a>
@@ -151,9 +150,7 @@
                 <div class="col-md-2 col-lg-2"></div>
                 <div class="col-md-5 col-lg-5 text-center">
                     <h2 class="title-style">Our Aim Is Your Satisfaction</h2>
-                <!--<a id="salesPageBtn" class=" d-inline" data-target="salesPage" href="#">Sales Page</a>  from homePageNavigation-->
-                    <a id="homeToSale" class="navlink nav-link text-style d-inline" data-target="salesPage" href="#">Sales Page</a> //from devJana
-
+                    <a id="homeToSale" class="navlink nav-link text-style d-inline" data-target="salesPage" href="#">Sales Page</a>
                 </div>
                 <div class="col-md-4 col-lg-4 text-center">
                     <a class="navlink nav-link" data-target="salesPage" href="#"><img src="./assets/home_page_sale.jpg"
@@ -291,9 +288,8 @@
     
             </section>
         </div>
-
   <!--SALES PAGE-->
-        <div class="container">
+        <div class="cotainer">
           <section id="salesPage" class="page-section">
             <div class="row">
             <div class="col-md-12 col-lg-12 mb-5 px-0">

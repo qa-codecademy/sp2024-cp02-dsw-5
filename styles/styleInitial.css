@@ -47,15 +47,8 @@ nav,
 .nav-link {
     font-weight: 500;
 }
-#salesPageBtn {
-    font-weight: 500;
-    color: #142a35;
-}
 
 .nav-link:hover {
-    color: burlywood
-}
-#salesPageBtn:hover {
     color: burlywood
 }
 
@@ -127,10 +120,6 @@ nav,
     background-color: none;
 }
 
-#salesPageBtn:active {
-    background-color: none;
-}
-
 /*custom scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
@@ -156,10 +145,6 @@ nav,
 }
 
 .nav-link.active{
-    text-decoration: underline;
-    text-underline-offset: 0.5em;
-  }
-#salesPageBtn:active{
     text-decoration: underline;
     text-underline-offset: 0.5em;
   }
