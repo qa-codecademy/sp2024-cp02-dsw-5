@@ -1,3 +1,5 @@
+let orderSuccessMessage = document.getElementById("orderSuccessMessage");
+
 let products = localStorage.getItem("cartItems");
 
 if (products) {
@@ -54,6 +56,7 @@ function LoadCartProducts(products) {
                     </div>
                     <p class="text-start text-md-center item-total-price">$${product.price}</p>
                 </div>
+                <hr/>
             `;
 
             cartContainer.appendChild(cartItem);
@@ -135,9 +138,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     orderForm.addEventListener('submit', function (e) {
         e.preventDefault();
-
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+          });
         if (orderForm.checkValidity() ) {
-            alert('The order is successfully submitted.');
+            //alert('The order is successfully submitted.');
+            orderSuccessMessage.innerText = "The order is successfully submitted.";
+            setTimeout(() => {
+                orderSuccessMessage.innerHTML = ""; 
+              }, 4000);
             localStorage.setItem("cartItems",JSON.stringify([]));
             let jsondata = localStorage.getItem("cartItems");
             products = JSON.parse(jsondata);
