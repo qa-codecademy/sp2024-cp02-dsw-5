@@ -2,7 +2,6 @@
     background-color: #142a35;
     height: 100%;
     border: none;
-
 }
 
 .btn-plus:hover, .btn-minus:hover {
@@ -93,4 +92,3 @@
 .fa-trash {
     padding-right: 5px;
 }
-

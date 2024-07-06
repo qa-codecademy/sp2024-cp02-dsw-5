@@ -54,4 +54,3 @@ let homeToSale = document.getElementById("homeToSale");
 homeToSale.addEventListener("click", function(){
   salePageNavButton.classList.add('active');
 });
-

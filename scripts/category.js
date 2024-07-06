@@ -85,7 +85,6 @@ function populateProducts(products) {
           <h5 class="card-title">${product.name}</h5>
           <p class="card-text">${product.material}</p>
           <p class="card-description flex-grow-1 hide-on-small-screen">${product.description}</p>
-         // <p class="card-description flex-grow-1">${product.description}</p>
           <div class="mt-auto">
             <p class="card-text" style="font-size: 1.5em;">$${product.price}</p>
             <button class="btn btn-primary add-to-cart-btn mt-3 addToCartBtn" data-product-id="${product.id}">Add to Cart</button>
@@ -117,13 +116,11 @@ function populateSalesProducts(products) {
         <div class="mt-auto">
           <p class="card-text" style="font-size: 1.5em;">$${product.price}</p>
           <button class="btn btn-primary add-to-cart-btn mt-3 addToCartBtn" data-product-id="${product.id}">Add to Cart</button>
-
         </div>
       </div>
     `;
     salesProductList.appendChild(productDiv);
   });
-
   attachAddToCartListeners();
 }
 
