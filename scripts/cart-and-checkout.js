@@ -23,6 +23,7 @@ function LoadCartProducts(products) {
         } else {
             emptyCartMessage.style.display = 'none';
         }
+
         products.forEach(product => {
             const cartItem = document.createElement('div');
             cartItem.className = 'row cart-item';
@@ -31,6 +32,7 @@ function LoadCartProducts(products) {
             cartItem.innerHTML = `
                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                     <div class="bg-image ripple rounded" data-mdb-ripple-color="light">
+                      //<div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                         <img class="productImg w-100" src="${product.img}" alt="${product.name}" />
                         <a href="#!">
                             <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
@@ -46,6 +48,7 @@ function LoadCartProducts(products) {
 
                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2 remove-item" data-product-id="${product.id}" data-mdb-tooltip-init title="Remove item">
                         <i class="fas fa-trash"></i>Remove
+
                     </button>
                 </div>
 
@@ -63,14 +66,15 @@ function LoadCartProducts(products) {
                         </button>
                     </div>
                     <p class="text-start text-md-center item-total-price">$${product.onSale ? (product.price*(100-product.discount)/100) : product.price}</p>
-                </div>
-            
+                </div>       
             `;
 
             cartContainer.appendChild(cartItem);
         });
+      
         addEventListeners();
         updateTotalPrice();
+
     };
 
     const discountRate = 0.1; // 10% discount
@@ -124,10 +128,8 @@ function LoadCartProducts(products) {
     };
 
     renderCartItems(products);
-
     
 //CHECKOUT
-
 
     const btnCheckout = document.getElementById("goToCheckout");
     function checkout() {

@@ -5,6 +5,7 @@
   #salesProductList .card {
     width: 17rem;
   }
+
   .card {
     position: relative;
   }
@@ -120,6 +121,7 @@
   #filterOptions > div {
       width: auto; /* Revert to original width for larger screens */
       margin-bottom: 5; /* Remove bottom margin */
+
   }
 
   #filterOptions input[type="range"] {
@@ -198,6 +200,7 @@
   height: 270px;
 } 
 
+
 .card-body {
   padding: 10px;
   display: flex;
@@ -254,3 +257,4 @@
     display: none;
   }
 }
+
