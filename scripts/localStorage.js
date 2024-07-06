@@ -24,10 +24,11 @@ function addProductToCart(productId) {
   
           if (alreadyInCart) {
             console.log("Product already in cart:", foundProduct);
+            showNotification('Product already exists in the cart', true);
           } else {
             cartItems.push(foundProduct);
             localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  
+            showNotification('Product added to cart successfully');
             console.log("Product added to cart:", foundProduct);
             console.log("Updated cart items:", cartItems);
             LoadCartProducts(cartItems);
@@ -68,3 +69,17 @@ function addProductToCart(productId) {
       }
     }
   };
+
+  function showNotification(message, isError = false) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.className = isError ? 'notification error show' : 'notification show';
+    notification.style.display = 'block';
+  
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 700); // Wait for the fade-out transition to complete before hiding
+    }, 2500); // Show for 1 second
+  }
