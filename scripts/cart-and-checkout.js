@@ -8,13 +8,10 @@ if (products) {
     products = [];
   }
 
-//--------------------------
-
 document.addEventListener('DOMContentLoaded', LoadCartProducts(products));
-
 function LoadCartProducts(products) {
     const cartContainer = document.getElementById('cart-container');
-    let emptyCartMessage = document.getElementById('emptyCartMessage');
+    
     // Function to render products in the cart
     const renderCartItems = () => {
         cartContainer.innerHTML = "";
@@ -23,6 +20,7 @@ function LoadCartProducts(products) {
         } else {
             emptyCartMessage.style.display = 'none';
         }
+
         products.forEach(product => {
             const cartItem = document.createElement('div');
             cartItem.className = 'row cart-item';
@@ -41,7 +39,7 @@ function LoadCartProducts(products) {
                 <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                     <p class="productName">${product.name}</p>
                     <p class="productCategory">Category: ${product.category}</p>
-                    <p class="productDiscount">${product.onSale ? `Discount: ${product.discount}%` : '<br/>'}</p>
+                    <p class="productDiscount">${product.onSale ? `Discount: ${product.discount}%` : ''}</p>
                     <p class="data-price">Price: $${product.price}</p>
 
                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2 remove-item" data-product-id="${product.id}" data-mdb-tooltip-init title="Remove item">
@@ -129,6 +127,7 @@ function LoadCartProducts(products) {
 //CHECKOUT
 
 
+
     const btnCheckout = document.getElementById("goToCheckout");
     function checkout() {
         const checkoutAlert = document.getElementById("checkoutAlert");
@@ -170,11 +169,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-function removeProductFromCart(productId) {
-    products = products.filter(product => product.id !== productId);
-    localStorage.setItem("cartItems", JSON.stringify(products));
-    LoadCartProducts(products);
-}
 
 

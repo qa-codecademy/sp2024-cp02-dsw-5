@@ -120,6 +120,7 @@
   #filterOptions > div {
       width: auto; /* Revert to original width for larger screens */
       margin-bottom: 5; /* Remove bottom margin */
+
   }
 
   #filterOptions input[type="range"] {
