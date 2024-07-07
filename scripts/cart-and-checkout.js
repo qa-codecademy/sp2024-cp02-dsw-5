@@ -93,7 +93,7 @@ function LoadCartProducts(products) {
         let totalDiscount = totalPrice - totalSalePrice;
         document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
         document.getElementById('total-amount').textContent = `$${totalSalePrice.toFixed(2)}`;
-        document.getElementById('totalDiscount').textContent = `-$${totalDiscount}`;
+        document.getElementById('totalDiscount').textContent = `-$${totalDiscount.toFixed(2)}`;
     };
 
     const addEventListeners = () => {
