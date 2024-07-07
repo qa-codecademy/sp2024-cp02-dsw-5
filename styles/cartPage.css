@@ -75,9 +75,13 @@
 }
 
 #total-price, #total-amount {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #142a35;
+}
+#discount {
+    font-size: 14px;
+    color: #6c757d;
 }
 
 #checkoutAlert {
@@ -92,3 +96,31 @@
 .fa-trash {
     padding-right: 5px;
 }
+
+#goToCheckout {
+    font-size: 16px;
+    background-color: #142a35 !important;
+    color: white;
+    border-radius: 8px;
+    border: none;
+}
+
+#goToCheckout a {
+    color: white;
+    text-decoration: none;
+}
+
+#goToCheckout:hover {
+    background-color: burlywood;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    outline: none;
+}
+input[type="number"].form-control.quantity:focus {
+    outline: none;
+    box-shadow: none;
+}
+

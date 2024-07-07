@@ -225,4 +225,5 @@ function updateActivePage() {
       item.classList.remove("active");
     }
   });
-}
+};
+
