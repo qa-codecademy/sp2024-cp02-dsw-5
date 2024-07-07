@@ -1,10 +1,126 @@
 .btn-plus, .btn-minus {
     background-color: #142a35;
     height: 100%;
+    border: none;
 }
 
 .btn-plus:hover, .btn-minus:hover {
     background-color: burlywood !important;
     border: none;
+}
+
+.cart-item {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.cart-item .productImg {
+    border-radius: 8px;
+}
+
+.cart-item .productName {
+    font-size: 18px;
+    font-weight: bold;
+    color: #142a35;
+    margin-bottom: 5px;
+}
+
+.cart-item .productCategory {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.cart-item .productDiscount {
+    font-size: 14px;
+    color: #dc3545; /* Red color for discounts */
+    margin-bottom: 5px;
+}
+
+.cart-item .data-price {
+    font-size: 16px;
+    color: #142a35;
+    margin-bottom: 10px;
+}
+
+.cart-item .item-total-price {
+    font-size: 18px;
+    color: #142a35;
+    font-weight: bold;
+}
+
+.cart-item .btn {
+    background-color: #142a35;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cart-item .btn:hover {
+    background-color: burlywood;
+}
+
+
+.cart-item .form-outline {
+    margin: 0;
+}
+
+.cart-item input[type="number"].quantity {
+    text-align: center;
+    width: 60px;
+}
+
+#total-price, #total-amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #142a35;
+}
+#discount {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+#checkoutAlert {
+    font-size: 16px;
+    color: #dc3545;
+}
+
+#orderSuccessMessage {
+    font-size: 18px;
+    color: #28a745; /* Green color for success */
+}
+.fa-trash {
+    padding-right: 5px;
+}
+
+#goToCheckout {
+    font-size: 16px;
+    background-color: #142a35 !important;
+    color: white;
+    border-radius: 8px;
+    border: none;
+}
+
+#goToCheckout a {
+    color: white;
+    text-decoration: none;
+}
+
+#goToCheckout:hover {
+    background-color: burlywood;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    outline: none;
+}
+input[type="number"].form-control.quantity:focus {
+    outline: none;
+    box-shadow: none;
 }
 

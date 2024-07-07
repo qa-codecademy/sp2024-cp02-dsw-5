@@ -49,4 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelector('.nav-link[data-target="homePage"]').classList.add('active');
 document.getElementById('homePage').classList.add('active');
 
+// let salePageNavButton = document.getElementById("salePageNavButton");
+// let homeToSale = document.getElementById("homeToSale");
+// homeToSale.addEventListener("click", function(){
+//   salePageNavButton.classList.add('active');
+// }); check this one again
 

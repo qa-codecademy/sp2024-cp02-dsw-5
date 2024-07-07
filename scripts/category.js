@@ -88,7 +88,7 @@ function populateProducts(products) {
       <div class="card-body d-flex flex-column">
         <h5 class="card-title">${product.name}</h5>
         <p class="card-text">${product.material}</p>
-        <p class="card-description flex-grow-1">${product.description}</p>
+        <p class="card-description flex-grow-1 hide-on-small-screen">${product.description}</p>
         <div class="mt-auto">
           <p class="card-text" style="font-size: 1.5em;">
             ${product.discount ? `<span style="text-decoration: line-through; color:red">$${product.price}</span> $${discountedPrice}` : `$${product.price}`}
@@ -131,7 +131,6 @@ function populateSalesProducts(products) {
     `;
     salesProductList.appendChild(productDiv);
   });
-
   attachAddToCartListeners();
 }
 
@@ -236,4 +235,5 @@ function updateActivePage() {
       item.classList.remove("active");
     }
   });
-}
+};
+
