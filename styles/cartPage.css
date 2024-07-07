@@ -88,6 +88,9 @@
     font-size: 16px;
     color: #dc3545;
 }
+#totalDiscount{
+    color: #dc3545;
+}
 
 #orderSuccessMessage {
     font-size: 18px;

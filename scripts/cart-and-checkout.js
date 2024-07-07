@@ -24,8 +24,8 @@ function LoadCartProducts(products) {
         products.forEach(product => {
             const cartItem = document.createElement('div');
             cartItem.className = 'row cart-item';
-            cartItem.dataset.price = product.price;
-
+            cartItem.dataset.price = product.onSale ? (product.price * (100 - product.discount) / 100) : product.price;
+            cartItem.dataset.originalPrice = product.price;
             cartItem.innerHTML = `
                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                     <div class="bg-image ripple rounded" data-mdb-ripple-color="light">
@@ -76,20 +76,24 @@ function LoadCartProducts(products) {
     const updateTotalPrice = () => {
         const cartItems = document.querySelectorAll('.cart-item');
         let totalPrice = 0;
+        let totalSalePrice = 0;
 
         cartItems.forEach(item => {
             const quantity = parseInt(item.querySelector('.quantity').value);
-            const price = parseFloat(item.dataset.price);
+            const salePrice = parseFloat(item.dataset.price);
+            const price = parseFloat(item.dataset.originalPrice);
+            const itemTotalSalePrice = quantity * salePrice;
             const itemTotalPrice = quantity * price;
-            item.querySelector('.item-total-price').textContent = `$${itemTotalPrice.toFixed(2)}`;
+            totalSalePrice += itemTotalSalePrice;
             totalPrice += itemTotalPrice;
+            item.querySelector('.item-total-price').textContent = `$${itemTotalSalePrice.toFixed(2)}`;
         });
+        
 
-        const discount = totalPrice * discountRate;
-        const totalAmount = totalPrice - discount;
-
+        let totalDiscount = totalPrice - totalSalePrice;
         document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
-        document.getElementById('total-amount').textContent = `$${totalAmount.toFixed(2)}`;
+        document.getElementById('total-amount').textContent = `$${totalSalePrice.toFixed(2)}`;
+        document.getElementById('totalDiscount').textContent = `-$${totalDiscount}`;
     };
 
     const addEventListeners = () => {
