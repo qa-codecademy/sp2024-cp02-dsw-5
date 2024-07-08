@@ -1,0 +1,364 @@
+#productList .card,
+#salesProductList .card,
+#searchProductList .card {
+  width: 16.7rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-description {
+  overflow: hidden;
+  display: block;
+  white-space: pre-wrap;
+}
+
+
+.addToCartBtn {
+  /* background-color: #142A35; */
+  background-color: #142a35;
+  color: white;
+  border: 6px solid #142A35;
+  border: none;
+}
+
+.addToCartBtn:hover {
+  background-color: burlywood;
+  box-shadow: none;
+  border: none;
+}
+
+.addToCartBtn:active {
+  background-color: #2a566c !important;
+}
+
+.form-range {
+  width: 10%;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+
+#filterOptions .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+#filterOptions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  /* Ensures that items wrap to the next line if they don't fit in one line */
+}
+
+#filterOptions label,
+#filterOptions select,
+#filterOptions input,
+#filterOptions span {
+  margin: 0 8px;
+  /* Adjusts spacing between elements */
+}
+
+#filterOptions input[type="range"] {
+  /* General styling for the range input */
+  width: 30%;
+  /* Adjust as needed */
+  -webkit-appearance: none;
+  /* Remove default styling */
+  appearance: none;
+  /* Remove default styling */
+  height: 4px;
+  /* Track height */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Track opacity */
+}
+
+#filterOptions input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Remove default thumb styling */
+  appearance: none;
+  /* Remove default thumb styling */
+  width: 20px;
+  /* Thumb width */
+  height: 20px;
+  /* Thumb height */
+  background: #142a35;
+  /* Thumb color */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+}
+
+#filterOptions input[type="range"]:hover {
+  opacity: 1;
+  /* Full opacity on hover */
+}
+
+#filterOptions input[type="range"]::-webkit-slider-thumb:hover {
+  background: #142A35;
+  /* Change thumb color on hover */
+  box-shadow: none;
+}
+
+.form-select {
+  padding-top: 2px;
+  padding-bottom: 2px;
+
+}
+
+.form-select:active,
+.form-select:focus {
+  box-shadow: none;
+}
+
+
+
+#filterOptions>div {
+  margin-bottom: 10px;
+  /* Space between items on small screens */
+  width: 100%;
+  /* Make each group take full width on small screens */
+}
+
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  #filterOptions {
+    flex-direction: row;
+  }
+
+  #filterOptions>div {
+    width: auto;
+    /* Revert to original width for larger screens */
+    margin-bottom: 5;
+    /* Remove bottom margin */
+  }
+
+  #filterOptions input[type="range"] {
+    width: auto;
+    /* Revert to original width for larger screens */
+  }
+}
+
+.pagination {
+  margin-top: 20px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+
+.pagination .page-link {
+  color: #142A35;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  padding: 8px 12px;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination .page-link:hover {
+  background-color: rgb(238, 230, 219);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #142A35;
+  border-color: none;
+  color: #fff;
+  box-shadow: none;
+}
+
+.pagination .page-link:focus,
+.pagination .page-link:hover {
+  text-decoration: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #142A35;
+  /* Active page link color */
+  color: #fff;
+  /* Text color for active link */
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  /* Disabled link color */
+  pointer-events: none;
+  /* Disable clicking on disabled items */
+}
+
+.pagination .page-link.disabled {
+  cursor: default;
+}
+
+/*CARD */
+
+.card-description {
+  font-size: 13px !important;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  border-radius: 15px;
+  height: 270px;
+}
+
+.card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.card-description {
+  font-size: 0.85em;
+  margin-bottom: 10px;
+  color: #777;
+}
+
+.price {
+  font-size: 1.3em;
+  color: #142A35;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.add-to-cart-btn {
+  border: none;
+  font-size: 0.9em;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+
+.mt-auto {
+  margin-top: auto;
+  padding-top: 5px;
+}
+
+
+/* SALE IMG */
+#signatureSale {
+  width: 100%;
+}
+
+
+
+#searchMessage {
+  margin-left: 70px;
+}
+
+#noProductsFound {
+  height: 521px;
+}
+
+/*
+#searchPage,
+#categoryPage,
+#salesPage {
+  margin-left: 70px;
+}*/
+
+#searchProductList,
+#salesProductList {
+ /* margin-left: 80px;*/
+  margin-left: 5%;
+}
+
+
+/* CSS for product card ------------------------------*/
+.card {
+  position: relative;
+  overflow: hidden; /* Ensure the description stays within the card */
+}
+
+.card .card-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height:270px;
+  background-color: rgba(20, 42, 53, 0.4); /* Background color for the description */
+  color: #fff; /* Text color */
+  padding: 20px !important; /* Padding for the description */
+  opacity: 0; /* Initially hide the description */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  font-size: 18px !important;
+}
+
+.card:hover .card-description {
+  opacity: 1; /* Show the description on hover */
+}
+
+#signatureSale {
+  margin-top: -35px;
+
+}
+
+#noItemsFilter {
+  border: none;
+  
+  display: flex;
+}
+
+#noItemsFilter p{
+  background-color: rgba(223, 223, 180, 0.571);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 500px;
+  margin-top: 50px;
+}
+
+.text-muted {
+  color: rgb(186, 15, 15) !important;
+  font-size: 18px;
+}
+
+.discou {
+  color: rgb(186, 15, 15);
+  font-size: 25px;
+}
+
+#shippingInfo {
+  background-color: rgba(223, 223, 180, 0.571);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  margin:20px;
+}

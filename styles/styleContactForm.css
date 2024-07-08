@@ -1,0 +1,118 @@
+/* CONTACT FORM */
+#contactEmail {
+    text-decoration: underline;
+    color: rgb(55, 126, 184);
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*height: 100vh;*/
+}
+
+#contactFormText {
+    text-align: center;
+    /* Center text horizontally */
+    margin-bottom: 20px;
+}
+
+
+.textTitle {
+    margin-bottom: 20px;
+    color: #142a35;
+}
+
+#textBody p, #textBody a{
+    font-size: 15px;
+}
+
+#contactFieldset label {
+    display: block;
+    /* Ensure labels are on separate lines */
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+
+#contactFieldset input {
+    width: 100%;
+    /* Full width of the fieldset */
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+}
+
+#contactFormContainer {
+    width: 100%;
+    max-width: 500px;
+    /* Max width of around 500px */
+    margin: 0 auto;
+}
+
+form {
+    width: 100%;
+    /* Full width of the container */
+}
+
+#contactFieldset {
+    text-align: left;
+    /* Align labels to the left */
+    border: none;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#contactIssue,
+#contactIssue option,
+#contactMessage {
+    font-size: 15px;
+}
+
+#contactFieldset select,
+#contactFieldset textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: 1px solid #ccc;
+}
+
+.buttonContainer {
+    text-align: center;
+    /* Center the button container */
+}
+
+.buttonContainer button {
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: #142a35;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.buttonContainer button:hover {
+    padding: 7px 20px;
+    font-size: 18px;
+    background-color: #1e4f6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 16px;
+}
+
+.successMessage {
+    color: green;
+    font-size: 16px;
+    font-weight: bold;
+}

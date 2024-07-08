@@ -1,0 +1,255 @@
+* {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+
+/*categories button
+.dropdown-toggle{
+    color: rgb(168, 167, 167);
+    text-decoration: none;
+    padding-bottom: none;
+    margin-bottom: none;
+}*/
+nav,
+.offcanvas {
+    background-color: #142a35;
+}
+
+.btn-close {
+    background-color: whitesmoke;
+}
+
+.cart-button {
+    background-color: burlywood;
+    color: #142a35;
+    font-size: 15px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.cart-button:hover {
+    background-color: #444f55;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.3rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: burlywood
+}
+
+.dropdown-menu {
+    background-color: #21353f;
+}
+
+.dropdown-item {
+    color: #a6a5a5;
+    padding-left: 20px;
+}
+
+/*Page views */
+.page-section {
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+}
+
+.container {
+    padding-top: 120px;
+}
+
+/*SEARCH   searchForm, searchButton, searchInput*/
+
+#searchForm {
+    background-color: rgb(185, 181, 181);
+    border-radius: 20px;
+    border: none;
+    margin-left: 5px;
+    margin-right: 15px;
+    padding-top: none;
+    padding-bottom: none;
+    max-width: 300px;
+}
+
+#searchButton,
+#searchInput {
+    background-color: transparent;
+    border: none;
+    padding-top: none;
+    padding-bottom: none;
+    outline-width: 0;
+    box-shadow: none;
+}
+
+#searchInput:active,
+#searchInput:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.fa-shopping-cart {
+    margin-right: 4px;
+}
+
+/*
+.dropdown-item.active{
+    background-color: #142a35;
+}*/
+
+.dropdown-toggle:hover {
+    color: burlywood;
+}
+
+.navlink:active {
+    background-color: none;
+}
+
+/*custom scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #d1e5ff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#142a35, #2a3e48);
+}
+/*
+.textTitle {
+    margin-bottom: 20px;
+    color: #142a35;
+}
+*/
+.footer {
+    background-color: #142a35;
+    color: rgb(119, 145, 155) !important;
+    text-align: center;
+}
+
+.nav-link.active{
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+  }
+
+
+/* Notofocation when product added to cart */
+/* .notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #28a745; 
+    color: white; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0; 
+    z-index: 10000; 
+    font-size: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    transition: opacity 0.5s ease-in-out; 
+  }
+  .notification.error {
+    background-color: #dc3545; 
+  }
+  .notification.show {
+    opacity: 1; 
+  } */
+  #notification-container {
+    position: fixed;
+    top: 95px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification {
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-20px);
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.error {
+    background-color: #e74c3c; /* Red color for error notifications */
+}
+
+
+/* end of notification  */
+
+  /*check this*/
+  #salesPageBtn {
+    font-weight: 500;
+    color: #142a35;
+}
+#salesPageBtn:hover {
+    color: burlywood
+}
+
+#salesPageBtn:active{
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+  }
+
+#navLogo:hover{
+    cursor: pointer;
+}
+
+.cart-button {
+    position: relative;
+    display: inline-block;
+}
+
+.badge {
+    padding: 0.1em 0.5em 0.3em 0.5em;
+    font-size: 1.1em;
+    border-radius: 50%;
+}
+
+.position-absolute {
+    position: absolute !important;
+}
+
+.top-0 {
+    top: 0 !important;
+}
+
+.start-100 {
+    left: 100% !important;
+}
+
+.translate-middle {
+    transform: translate(-70%, -40%) !important;
+}
+
+.bg-danger {
+    background-color: #14506c !important;
+}
+
+.rounded-pill {
+    border-radius: 50rem !important;
+}

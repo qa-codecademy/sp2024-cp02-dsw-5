@@ -1,0 +1,14 @@
+.page-section {
+    display: none;
+  }
+  .page-section.active {
+    display: block;
+  }
+
+.nav-link.active{
+  font-weight: bold;
+}
+footer{
+  position: fixed;
+  background-color:whitesmoke;
+}
