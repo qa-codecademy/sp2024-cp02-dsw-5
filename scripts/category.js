@@ -70,34 +70,41 @@ function populateCategories(categories) {
 
 function populateProducts(products) {
   const productList = document.getElementById("productList");
+  const noItemsFilter = document.getElementById("noItemsFilter");
+
   productList.innerHTML = "";
 
-  if(products.length == 0){
-    //add some logic to display an message to the user if there is no products to be shown....
-  };
+  if(products.length === 0){
+    noItemsFilter.innerHTML = "<p>No products available for the selected settings. Please adjust your filter criteria.</p>";
+    noItemsFilter.style.display = "block";  // Ensure the message is visible
+  } else {
+    noItemsFilter.innerHTML = "";
+    noItemsFilter.style.display = "none";  // Hide the message if there are products
+  }
 
   let startIndex = (currentPage - 1) * pageSize;
   let endIndex = currentPage * pageSize;
 
-  products.slice(startIndex, endIndex).forEach(product => {
+  products.slice(startIndex, endIndex).forEach((product) => {
     const discountedPrice = product.discount ? (product.price - (product.price * product.discount / 100)).toFixed(2) : product.price;
-    const productDiv = document.createElement('div');
-    productDiv.className = 'card m-2 col-sm-6 col-md-4 col-lg-3 position-relative';
+    const productDiv = document.createElement("div");
+    productDiv.className =
+      "card m-2 col-sm-6 col-md-4 col-lg-3 position-relative";
     productDiv.innerHTML = `
-      <img src="${product.img}" class="card-img-top" alt="${product.name}">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">${product.name}</h5>
-        <p class="card-text">${product.material}</p>
-        <p class="card-description flex-grow-1 hide-on-small-screen">${product.description}</p>
-        <div class="mt-auto">
-          <p class="card-text" style="font-size: 1.5em;">
-            ${product.discount ? `<span style="text-decoration: line-through; color:red">$${product.price}</span> $${discountedPrice}` : `$${product.price}`}
+        <img src="${product.img}" class="card-img-top" alt="${product.name}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${product.name}</h5>
+          <p class="card-text">${product.material}</p>
+          <p class="card-description flex-grow-1 hide-on-small-screen">${product.description}</p>
+          <div class="mt-auto">
+            <p class="card-text" style="font-size: 1.5em;">
+            ${product.discount ? `<span style="text-decoration: line-through;">$${product.price}</span> <span class="discou">$${discountedPrice}</span>` : `$${product.price}`}
             ${product.discount ? `<small class="text-muted">(${product.discount}% off)</small>` : ''}
           </p>
-          <button class="btn btn-primary addToCartBtn add-to-cart-btn mt-3" data-product-id="${product.id}">Add to Cart</button>
+            <button class="btn btn-primary add-to-cart-btn mt-3 addToCartBtn" data-product-id="${product.id}">Add to Cart</button>
+          </div>
         </div>
-      </div>
-    `;
+      `;
     productList.appendChild(productDiv);
   });
 
@@ -105,6 +112,8 @@ function populateProducts(products) {
 
   attachAddToCartListeners();
 }
+
+
 //Function to handle the sales page products display
 function populateSalesProducts(products) {
   const salesProductList = document.getElementById('salesProductList');
@@ -122,10 +131,40 @@ function populateSalesProducts(products) {
         <p class="card-description flex-grow-1">${product.description}</p>
         <div class="mt-auto">
           <p class="card-text" style="font-size: 1.5em;">
-            ${product.discount ? `<span style="text-decoration: line-through; color:red">$${product.price}</span> $${discountedPrice}` : `$${product.price}`}
+            ${product.discount ? `<span style="text-decoration: line-through;">$${product.price}</span> <span class="discou">$${discountedPrice}</span>` : `$${product.price}`}
             ${product.discount ? `<small class="text-muted">(${product.discount}% off)</small>` : ''}
           </p>
-          <button class="btn btn-primary addToCartBtn add-to-cart-btn mt-3" data-product-id="${product.id}">Add to Cart</button>
+          <button class="btn btn-primary add-to-cart-btn mt-3 addToCartBtn" data-product-id="${product.id}">Add to Cart</button>
+        </div>
+      </div>
+    `;
+    salesProductList.appendChild(productDiv);
+  });
+  attachAddToCartListeners();
+}
+/*
+function populateSalesProducts(products) {
+  const salesProductList = document.getElementById('salesProductList');
+  salesProductList.innerHTML = '';
+
+  products.forEach(product => {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'card m-2 col-sm-6 col-md-4 col-lg-3 position-relative';
+
+    // Constructing the product card with hover description
+    productDiv.innerHTML = `
+      <div class="card-img-wrapper">
+        <img src="${product.img}" class="card-img-top" alt="${product.name}">
+        <div class="card-description">
+          <p>${product.description}</p>
+        </div>
+      </div>
+      <div class="card-body-items d-flex flex-column">
+      <h5 class="card-title">${product.name}</h5>
+        <div class="card-text">${product.material}</div>
+        <div class="mt-auto">
+          <p class="card-text" style="font-size: 1.5em;">$${product.price}</p>
+          <button class="btn btn-primary add-to-cart-btn mt-3 addToCartBtn" data-product-id="${product.id}">Add to Cart</button>
         </div>
       </div>
     `;
@@ -134,7 +173,7 @@ function populateSalesProducts(products) {
   attachAddToCartListeners();
 }
 
-
+*/
 function filterProducts() {
   const selectedCategory = document.getElementById("categories").value;
   const selectedMaterial = document.getElementById("materials").value;
@@ -237,3 +276,76 @@ function updateActivePage() {
   });
 };
 
+//search
+
+
+document.getElementById('searchForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+  let searchValue = document.getElementById('searchInput').value.toLowerCase().trim();
+  //console.log(searchValue.value);
+  // Navigate to searchPage
+  let pageSections = document.querySelectorAll('.page-section');
+  let navLink = document.querySelectorAll('.nav-link');
+  navLink.forEach(link => {
+    link.classList.remove('active')});
+  
+
+  pageSections.forEach(section => {
+    section.classList.remove('active');
+  });
+
+  document.getElementById('searchPage').classList.add('active');
+  filterProductsByName(searchValue);
+});
+
+
+async function filterProductsByName(searchValue) {
+  let productsUrl = "./assets/products.json";
+  try {
+    let response = await fetch(productsUrl);
+    let productsData = await response.json();
+
+    let filteredProducts = productsData.filter(prod => prod.name.toLowerCase().includes(searchValue));
+
+    if (filteredProducts.length > 0) {
+      document.getElementById('searchMessage').innerHTML = '<h3>Search Results for: <span style="color:green; font-size:30px">' + searchValue + '</span></h3>';
+      populateProductsSearch(filteredProducts);
+    } else {
+      document.getElementById('searchMessage').innerHTML = '<h3 id="noProductsFound">No products were found for: <span style="color:red; font-size:30px">' + searchValue + '</span></h3>';
+      searchProductList.innerHTML = ' ';
+    }
+  } catch (e) {
+    document.getElementById('searchMessage').innerHTML = '<h3>Error filtering' + '</h3>';
+  }
+
+};
+
+let searchProductList = document.getElementById("searchProductList");
+
+function populateProductsSearch(products) {
+
+  searchProductList.innerHTML = ' ';
+
+  products.forEach(product => {
+    const discountedPrice = product.discount ? (product.price - (product.price * product.discount / 100)).toFixed(2) : product.price;
+    const productDiv = document.createElement('div');
+    productDiv.className = 'card m-2 col-sm-6 col-md-4 col-lg-3 position-relative';
+    productDiv.innerHTML = `
+      <img src="${product.img}" class="card-img-top" alt="${product.name}">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">${product.name}</h5>
+        <p class="card-text">${product.material}</p>
+        <p class="card-description flex-grow-1 hide-on-small-screen">${product.description}</p>
+        <div class="mt-auto">
+          <p class="card-text" style="font-size: 1.5em;">
+            ${product.discount ? `<span style="text-decoration: line-through;">$${product.price}</span> <span class="discou">$${discountedPrice}</span>` : `$${product.price}`}
+            ${product.discount ? `<small class="text-muted">(${product.discount}% off)</small>` : ''}
+          </p>
+          <button class="btn btn-primary add-to-cart-btn mt-3 addToCartBtn" data-product-id="${product.id}">Add to Cart</button>
+        </div>
+      </div>
+    `;
+    searchProductList.appendChild(productDiv);
+  });
+  attachAddToCartListeners();
+}

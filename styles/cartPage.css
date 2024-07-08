@@ -1,10 +1,12 @@
-.btn-plus, .btn-minus {
+.btn-plus,
+.btn-minus {
     background-color: #142a35;
     height: 100%;
     border: none;
 }
 
-.btn-plus:hover, .btn-minus:hover {
+.btn-plus:hover,
+.btn-minus:hover {
     background-color: burlywood !important;
     border: none;
 }
@@ -36,7 +38,8 @@
 
 .cart-item .productDiscount {
     font-size: 14px;
-    color: #dc3545; /* Red color for discounts */
+    color: #dc3545;
+    /* Red color for discounts */
     margin-bottom: 5px;
 }
 
@@ -74,11 +77,13 @@
     width: 60px;
 }
 
-#total-price, #total-amount {
+#total-price,
+#total-amount {
     font-size: 18px;
     font-weight: bold;
     color: #142a35;
 }
+
 #discount {
     font-size: 14px;
     color: #6c757d;
@@ -90,14 +95,19 @@
 }
 
 #orderSuccessMessage {
-    font-size: 18px;
-    color: #28a745; /* Green color for success */
+    margin-top: 10px;
+    font-size: 17px;
+    color: #28a745;
+    font-weight: bold;
+    /* Green color for success */
 }
+
 .fa-trash {
     padding-right: 5px;
 }
 
-#goToCheckout {
+#goToCheckout,
+#submitOrder {
     font-size: 16px;
     background-color: #142a35 !important;
     color: white;
@@ -113,14 +123,139 @@
 #goToCheckout:hover {
     background-color: burlywood;
 }
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
     outline: none;
 }
-input[type="number"].form-control.quantity:focus {
+
+.form-controls {
+    padding: 5px;
+    border-radius: 10%;
+    border: 1px solid gray;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+input[type="number"].form-controls.quantity:focus {
     outline: none;
     box-shadow: none;
 }
 
+
+.cartCard {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+
+.card-header {
+    background-color: #e9ebef;
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+
+}
+
+.form-check-input:checked {
+    background-color: #142a35;
+    border-color: #142a35;
+    box-shadow: none;
+}
+
+.form-check-input:active {
+    box-shadow: none;
+}
+
+
+#cardInformationSection {
+    display: none;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-label {
+    color: #143a25;
+}
+
+
+
+/* Input Styles */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Placeholder Styles */
+.form-control::placeholder {
+    color: #6c757d;
+    opacity: 1;
+    font-size: 15px;
+}
+
+/* Input Focus Styles */
+.form-control:focus {
+    border-color: #142a35;
+    box-shadow: none;
+}
+
+/* Card Info Section Styles */
+#cardInformationSection, #shippingInfo {
+    background-color: #f8f9fa;
+}
+
+/* Credit Card Image Styles */
+.card-method img {
+    margin-left: 10px;
+    width: 45px;
+}
+
+/* Responsive Columns */
+@media (min-width: 576px) {
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .form-row .col-md-6, .form-row .col-md-4 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+#exampleModalCenter input,
+#exampleModalCenter label,
+#exampleModalCenter select,
+#exampleModalCenter option
+{
+    font-size: 15px !important;
+}
+
+#exampleModalCenter h5,
+.cartCard h5 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.orderSuccessMessageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#totalDiscount{
+    color: #dc3545;
+}

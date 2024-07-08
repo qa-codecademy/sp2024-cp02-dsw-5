@@ -47,15 +47,8 @@ nav,
 .nav-link {
     font-weight: 500;
 }
-#salesPageBtn {
-    font-weight: 500;
-    color: #142a35;
-}
 
 .nav-link:hover {
-    color: burlywood
-}
-#salesPageBtn:hover {
     color: burlywood
 }
 
@@ -78,7 +71,7 @@ nav,
 }
 
 .container {
-    padding-top: 150px;
+    padding-top: 120px;
 }
 
 /*SEARCH   searchForm, searchButton, searchInput*/
@@ -127,10 +120,6 @@ nav,
     background-color: none;
 }
 
-#salesPageBtn:active {
-    background-color: none;
-}
-
 /*custom scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
@@ -159,14 +148,10 @@ nav,
     text-decoration: underline;
     text-underline-offset: 0.5em;
   }
-#salesPageBtn:active{
-    text-decoration: underline;
-    text-underline-offset: 0.5em;
-  }
 
 
 /* Notofocation when product added to cart */
-.notification {
+/* .notification {
     position: fixed;
     top: 100px;
     right: 20px;
@@ -185,6 +170,86 @@ nav,
   }
   .notification.show {
     opacity: 1; 
+  } */
+  #notification-container {
+    position: fixed;
+    top: 95px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification {
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-20px);
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.error {
+    background-color: #e74c3c; /* Red color for error notifications */
+}
+
+
+/* end of notification  */
+
+  /*check this*/
+  #salesPageBtn {
+    font-weight: 500;
+    color: #142a35;
+}
+#salesPageBtn:hover {
+    color: burlywood
+}
+
+#salesPageBtn:active{
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
   }
 
+#navLogo:hover{
+    cursor: pointer;
+}
 
+.cart-button {
+    position: relative;
+    display: inline-block;
+}
+
+.badge {
+    padding: 0.1em 0.5em 0.3em 0.5em;
+    font-size: 1.1em;
+    border-radius: 50%;
+}
+
+.position-absolute {
+    position: absolute !important;
+}
+
+.top-0 {
+    top: 0 !important;
+}
+
+.start-100 {
+    left: 100% !important;
+}
+
+.translate-middle {
+    transform: translate(-70%, -40%) !important;
+}
+
+.bg-danger {
+    background-color: #14506c !important;
+}
+
+.rounded-pill {
+    border-radius: 50rem !important;
+}

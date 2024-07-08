@@ -70,16 +70,39 @@ function addProductToCart(productId) {
     }
   };
 
-  function showNotification(message, isError = false) {
-    const notification = document.getElementById('notification');
-    notification.textContent = message;
-    notification.className = isError ? 'notification error show' : 'notification show';
-    notification.style.display = 'block';
+  // function showNotification(message, isError = false) {
+  //   const notification = document.getElementById('notification');
+  //   notification.textContent = message;
+  //   notification.className = isError ? 'notification error show' : 'notification show';
+  //   notification.style.display = 'block';
   
+  //   setTimeout(() => {
+  //     notification.classList.remove('show');
+  //     setTimeout(() => {
+  //       notification.style.display = 'none';
+  //     }, 700); // Wait for the fade-out transition to complete before hiding
+  //   }, 2500); // Show for 1 second
+  // }
+  function showNotification(message, isError = false) {
+    const notificationContainer = document.getElementById('notification-container');
+
+    const notification = document.createElement('div');
+    notification.className = isError ? 'notification error' : 'notification';
+    notification.textContent = message;
+
+    notificationContainer.prepend(notification);
+
+    // Use setTimeout to remove the notification after 2.5 seconds
     setTimeout(() => {
-      notification.classList.remove('show');
-      setTimeout(() => {
-        notification.style.display = 'none';
-      }, 700); // Wait for the fade-out transition to complete before hiding
-    }, 2500); // Show for 1 second
-  }
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 700); // Wait for the fade-out transition to complete before removing
+    }, 2500); // Show for 2.5 seconds
+
+    // Use requestAnimationFrame to ensure smooth transition on show
+    requestAnimationFrame(() => {
+        notification.classList.add('show');
+    });
+};
+
